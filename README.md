@@ -55,13 +55,9 @@ See [`progress/DAILY_RITUAL.md`](progress/DAILY_RITUAL.md).
 
 ## Push to GitHub
 
-```bash
-cd /home/muhammad-ahmad/work/crud-app
-git remote add origin https://github.com/<YOU>/crud-app.git
-git push -u origin main
-```
+Repo (already pushed): **https://github.com/Muhammad-Ahmad17/crud-app**
 
-Then put the repo URL on your CV.
+Put that URL on your CV (`week4/CV_TEMPLATE.md`).
 
 ## Honest expectations
 
