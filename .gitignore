@@ -1,0 +1,35 @@
+# Build
+bin/
+obj/
+out/
+*.user
+*.suo
+.vs/
+.idea/
+*.DotSettings.user
+
+# Data / local DBs
+*.db
+*.db-shm
+*.db-wal
+
+# Secrets / env
+appsettings.*.local.json
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/*
+!.vscode/extensions.json
+
+# Test / coverage
+TestResults/
+coverage/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json

@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/week1/">
+    <Project Path="week1/BankAccount/BankAccount.csproj" />
+    <Project Path="week1/CodingDrill/CodingDrill.csproj" />
+    <Project Path="week1/LibrarySystem/LibrarySystem.csproj" />
+    <Project Path="week1/StudentGrades/StudentGrades.csproj" />
+  </Folder>
+  <Folder Name="/week2/">
+    <Project Path="week2/AdoNetDemo/AdoNetDemo.csproj" />
+    <Project Path="week2/CodingDrill2/CodingDrill2.csproj" />
+    <Project Path="week2/EfCoreDemo/EfCoreDemo.csproj" />
+    <Project Path="week2/WebApiDemo/WebApiDemo.csproj" />
+  </Folder>
+  <Folder Name="/week3/">
+    <Project Path="week3/ClinicApi.Tests/ClinicApi.Tests.csproj" />
+    <Project Path="week3/ClinicApi/ClinicApi.csproj" />
+    <Project Path="week3/CodingDrill3/CodingDrill3.csproj" />
+  </Folder>
+</Solution>
