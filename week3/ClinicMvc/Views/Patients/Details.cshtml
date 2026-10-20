@@ -1,0 +1,32 @@
+@model ClinicMvc.Models.Patient
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.FullName)</dt>
+        <dd class="col-sm-9">@Model.FullName</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.DateOfBirth)</dt>
+        <dd class="col-sm-9">@Model.DateOfBirth.ToString("yyyy-MM-dd")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Phone)</dt>
+        <dd class="col-sm-9">@(Model.Phone ?? "—")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Email)</dt>
+        <dd class="col-sm-9">@(Model.Email ?? "—")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Notes)</dt>
+        <dd class="col-sm-9">@(Model.Notes ?? "—")</dd>
+    </dl>
+</div>
+
+<div>
+    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-link" asp-action="Index">Back to List</a>
+</div>

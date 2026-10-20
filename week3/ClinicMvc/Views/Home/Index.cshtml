@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "MVC Architecture";
+}
+
+<div class="text-center mb-4">
+    <h1 class="display-5">ClinicMvc</h1>
+    <p class="lead">Learn <strong>Model–View–Controller</strong> with a real Patients CRUD.</p>
+    <a class="btn btn-primary btn-lg" asp-controller="Patients" asp-action="Index">Open Patients CRUD</a>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 border-primary">
+            <div class="card-header bg-primary text-white"><strong>M</strong>odel</div>
+            <div class="card-body">
+                <p>Data + validation.</p>
+                <code>Models/Patient.cs</code>
+                <p class="mt-2 mb-0 small text-muted">What the app stores and validates ([Required], [Email], …).</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-success">
+            <div class="card-header bg-success text-white"><strong>V</strong>iew</div>
+            <div class="card-body">
+                <p>HTML the user sees.</p>
+                <code>Views/Patients/*.cshtml</code>
+                <p class="mt-2 mb-0 small text-muted">Razor pages that render the Model (Index, Create, Edit, …).</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-warning">
+            <div class="card-header bg-warning"><strong>C</strong>ontroller</div>
+            <div class="card-body">
+                <p>Handles the request.</p>
+                <code>Controllers/PatientsController.cs</code>
+                <p class="mt-2 mb-0 small text-muted">Loads Model from DB, returns the right View.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-4" />
+
+<h2>Request flow (Index)</h2>
+<ol>
+    <li>Browser → <code>GET /Patients</code></li>
+    <li>Routing → <code>PatientsController.Index()</code></li>
+    <li>Controller → queries <code>AppDbContext</code> (Model / DB)</li>
+    <li>Controller → <code>return View(patients)</code></li>
+    <li>View engine → <code>Views/Patients/Index.cshtml</code> HTML</li>
+</ol>
+
+<pre class="bg-light p-3 rounded">Browser  →  Controller  →  Model/DB
+                ↓
+              View (HTML)  →  Browser
+</pre>
+
+<h2>MVC vs ClinicApi (Web API)</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr><th></th><th>ClinicMvc (this app)</th><th>ClinicApi</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Returns</td>
+            <td>HTML pages (Razor Views)</td>
+            <td>JSON</td>
+        </tr>
+        <tr>
+            <td>UI</td>
+            <td>Server-rendered forms</td>
+            <td>No UI (Postman / React / Swagger)</td>
+        </tr>
+        <tr>
+            <td>Layers</td>
+            <td>Controller → DbContext (simple)</td>
+            <td>Controller → Service → Repository</td>
+        </tr>
+        <tr>
+            <td>Use when</td>
+            <td>Learning MVC / admin panels</td>
+            <td>APIs for mobile/SPA / enterprise backends</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="text-muted">CureMD / Systems shops often have both: MVC or Razor pages for internal tools, Web API for products.</p>

@@ -28,6 +28,12 @@ dotnet run
 # Swagger UI: http://localhost:<port>/swagger
 ```
 
+**Also learn MVC (HTML CRUD):** see [`ClinicMvc/`](ClinicMvc/) — clearer Model/View/Controller for architecture.
+
+```bash
+dotnet run --project week3/ClinicMvc
+```
+
 ```bash
 # Tests
 dotnet test week3/ClinicApi.Tests

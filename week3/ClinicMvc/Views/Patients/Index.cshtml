@@ -1,0 +1,46 @@
+@model IEnumerable<ClinicMvc.Models.Patient>
+@{
+    ViewData["Title"] = "Patients";
+}
+
+@* VIEW — HTML that renders the Model list passed from PatientsController.Index *@
+
+<h1>Patients</h1>
+<p class="text-muted">MVC flow: <strong>Controller</strong> loaded data → this <strong>View</strong> displays the <strong>Model</strong>.</p>
+
+@if (TempData["Message"] is string msg)
+{
+    <div class="alert alert-success">@msg</div>
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.FullName)</th>
+            <th>@Html.DisplayNameFor(m => m.DateOfBirth)</th>
+            <th>@Html.DisplayNameFor(m => m.Phone)</th>
+            <th>@Html.DisplayNameFor(m => m.Email)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>@item.FullName</td>
+            <td>@item.DateOfBirth.ToString("yyyy-MM-dd")</td>
+            <td>@item.Phone</td>
+            <td>@item.Email</td>
+            <td class="text-nowrap">
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

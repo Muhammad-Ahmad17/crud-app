@@ -14,6 +14,7 @@
   <Folder Name="/week3/">
     <Project Path="week3/ClinicApi.Tests/ClinicApi.Tests.csproj" />
     <Project Path="week3/ClinicApi/ClinicApi.csproj" />
+    <Project Path="week3/ClinicMvc/ClinicMvc.csproj" />
     <Project Path="week3/CodingDrill3/CodingDrill3.csproj" />
   </Folder>
 </Solution>
